@@ -1,0 +1,12 @@
+.calculator {
+width: 300px; margin: 0 auto; text-align: center;
+} .display {
+font-size: 2rem; margin-bottom: 10px; padding: 10px;
+border: 5px solid black; color: red;
+} .buttons {
+display: grid;
+grid-template-columns: repeat(1, 1fr); grid-gap: 5px;
+} button {
+font-size: 1.5rem; padding: 10px; background-color: red; border: 3px solid black; cursor: pointer;
+} button:hover {
+background-color: yellow; }
