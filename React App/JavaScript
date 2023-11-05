@@ -1,0 +1,37 @@
+import React, { useState } from 'react'; import './App.css';
+function App() {
+const [displayValue, setDisplayValue] = useState('0'); const handleButtonClick = (value) => {
+if (displayValue === '0') { setDisplayValue(value);
+} else {
+setDisplayValue(displayValue + value);
+} };
+const handleCalculate = () => { try {
+setDisplayValue(eval(displayValue).toString()); } catch (error) {
+setDisplayValue('Error'); }
+};
+const handleClear = () => {
+setDisplayValue('0'); };
+return (
+<div className="calculator">
+<div className="display">{displayValue}</div> <div className="buttons">
+<div className="row"> <button onClick={() <button onClick={() <button onClick={() <button onClick={()
+</div>
+<div className="row">
+<button onClick={() <button onClick={() <button onClick={() <button onClick={()
+</div>
+<div className="row">
+<button onClick={() <button onClick={() <button onClick={() <button onClick={()
+</div>
+=> handleButtonClick('7')}>7</button> => handleButtonClick('8')}>8</button> => handleButtonClick('9')}>9</button> => handleButtonClick('/')}>/</button>
+=> handleButtonClick('4')}>4</button> => handleButtonClick('5')}>5</button> => handleButtonClick('6')}>6</button> => handleButtonClick('*')}>*</button>
+=> handleButtonClick('1')}>1</button> => handleButtonClick('2')}>2</button> => handleButtonClick('3')}>3</button> => handleButtonClick('-')}>-</button>
+<div className="row">
+<button onClick={() => handleButtonClick('0')}>0</button> <button onClick={() => handleButtonClick('.')}>.</button> <button onClick={handleCalculate}>=</button>
+<button onClick={() => handleButtonClick('+')}>+</button>
+</div>
+<div className="row">
+<button onClick={handleClear}>C</button> </div>
+      </div>
+    </div>
+); }
+export default App;
