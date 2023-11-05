@@ -1,0 +1,85 @@
+body{
+    margin: 0px;
+    font-family:'Times New Roman', Times, serif;
+}
+.bg{
+    background-color: #970303;
+    height: 100vh;
+    background-size: cover;
+    text-align: center;
+}
+.login-card{
+    background-color: #060101;
+    height: 65%;
+    width: 35%;
+    border-radius: 12px;
+    margin-top: 170px;
+    text-align: center;
+}
+.heading{
+    color: #f80303;
+    font-weight: 800;
+    padding-top: 40px;
+    margin-bottom: 8%;
+}
+input{
+    padding: 10px;
+    border-radius: 5px;
+    width: 60%;
+    margin-top: 2%;
+}
+.login-btn{
+    color:aliceblue;
+    width: 60%;
+    margin-top: 20px;
+    padding: 10px;
+}
+.youtube-icon{
+    position: absolute;
+    left: 680px;
+    top: 50px;
+}
+.form-group p{
+    color: #050002;
+    margin-top: 5px;
+    visibility: hidden;
+}
+.form-group.error input{
+    border-color: #060102;
+}
+.form-group.success input{
+    border-color: #6cd864;
+}
+.form-group.error p{
+    visibility: visible;
+}
+.form-group.success p{
+    visibility: hidden;
+}
+.icon1{
+    height: 400px;
+    width: 500px;
+}
+.success-msg{
+    color: rgb(33, 148, 33);
+    margin-top: 10px;
+    font-weight: bold;
+    visibility: hidden;
+}
+.form-success.success p{
+    visibility: visible;
+}
+.mem-style{
+    color: #fcf8f9;
+    position: absolute;
+    left: 450px;
+    top: 10px;
+    font-size: 30px;
+}
+.welcome-txt{
+    color: #DA0037;
+    position: absolute;
+    left: 1450px;
+    top: 400px;
+    font-size: 50px;
+}
