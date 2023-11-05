@@ -1,0 +1,28 @@
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
+const server = http.createServer((req, res) => {
+// Serve static HTML for the store page
+if (req.url === '/' || req.url === '/mem') {
+const storePagePath = path.join(__dirname, 'mem.html'); fs.readFile(storePagePath, 'utf8', (err, data) => {
+if (err) {
+res.statusCode = 500; // Internal Server Error res.end('Error loading the store page.');
+} else {
+res.writeHead(200, { 'Content-Type': 'text/html' }); res.end(data);
+} });
+} else if (req.url === '/products') { // Serve JSON data for product options const products = [
+{ id: 1, name: 'Plan 1', price: 29.0 }, { id: 2, name: 'Plan 2', price: 199.0 }, { id: 3, name: 'Plan 3', price: 999.0 },
+];
+res.writeHead(200, { 'Content-Type': 'application/json' }); res.end(JSON.stringify(products));
+} else if (req.url.startsWith('/buy/')) {
+// Handle product selection
+const productId = parseInt(req.url.split('/')[2]);
+// Simulate a purchase
+// You can implement your own logic here, e.g., adding the product to a
+shopping cart.
+const purchaseResult = `Purchased Plan with ID ${productId}`; res.writeHead(200, { 'Content-Type': 'text/plain' }); res.end(purchaseResult);
+} else {
+res.statusCode = 404; // Not Found res.end('Not Found');
+} });
+const port = 3000; // You can change the port number as needed server.listen(port, () => {
+ console.log(`Store server is running on port ${port}`); });
