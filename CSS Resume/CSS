@@ -1,1 +1,20 @@
-
+.heading{ font-weight: 800; color: white;
+} .para{
+font-weight: 600;
+color: white; }
+.about-sec{ height: 330px;
+width: 80%; background-color: white; padding: 50px; margin-left: 80px; border-radius: 12px;
+} h2{
+color: #9e0707; }
+.education-sec{ height: 230px;
+width: 80%; background-color: white; padding: 50px; margin-left: 80px; border-radius: 12px;
+} .skills-sec{
+height: 330px;
+width: 80%; background-color: white; padding: 50px; margin-left: 80px; border-radius: 12px;
+} .lang-sec{
+height: 130px;
+width: 80%; background-color: white; padding: 50px; margin-left: 80px; border-radius: 12px;
+}
+.contact-sec{ height : 140px;
+width: 80%; background-color: white; padding: 50px; margin-left: 80px; border-radius: 12px; text-align: center;
+}
