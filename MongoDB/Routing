@@ -1,0 +1,13 @@
+const express = require('express'); const router = express.Router();
+const Todo = require('../models/todo'); router.post('/todos', (req, res) => {
+const todo = new Todo(req.body); todo.save((err, todo) => {
+if (err) { res.status(500).send(err);
+} else { res.status(201).json(todo);
+} });
+});
+router.get('/todos', (req, res) => {
+Todo.find({}, (err, todos) => { if (err) {
+res.status(500).send(err); } else {
+res.status(200).json(todos); }
+}); });
+module.exports = router;
