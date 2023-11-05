@@ -1,0 +1,28 @@
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const todosRouter = require('./routes/todos');
+const app = express();
+const port = process.env.PORT || 27017; mongoose.connect('mongodb://localhost/shop-purchase-portal', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connection.on('error', (error) => console.error(`MongoDB Connection Error: ${error}`));
+mongoose.connection.on('open', () => console.log('Connected to MongoDB')); app.use(bodyParser.json());
+app.use('/api', todosRouter);
+const PurchaseSchema = new mongoose.Schema({
+item: String, quantity: Number, price: Number,
+});
+const Purchase = mongoose.model('Purchase', PurchaseSchema); app.post('/purchases', (req, res) => {
+const { item, quantity, price } = req.body;
+const newPurchase = new Purchase({ item, quantity, price }); newPurchase.save((err, purchase) => {
+if (err) {
+res.status(400).json({ error: 'Could not create the purchase.' });
+} else { res.status(201).json(purchase);
+} });
+});
+app.get('/purchases', (req, res) => {
+Purchase.find({}, (err, purchases) => { if (err) {
+res.status(500).json({ error: 'Could not retrieve purchases.' }); } else {
+res.json(purchases); }
+}); });
+app.listen(port, () => {
+console.log(`Server is running on port ${port}`);
+});
