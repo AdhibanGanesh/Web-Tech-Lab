@@ -1,0 +1,12 @@
+<!DOCTYPE html> <html>
+<head>
+<title>YouTube Membership</title> </head>
+<body>
+<h1>Welcome to our YouTube Membership Plan...!!</h1> <h2>Available Plans to Buy :-</h2>
+<ul>
+<li><a href="/buy/1">Plan 1 - 29.00 Rs/- for Exclusive Photos, Stickers and AG Badges...</a></li>
+<li><a href="/buy/2">Plan 2 - 199.00 Rs/- for Members Only Content Added to above...</a></li>
+<li><a href="/buy/3">Plan 3 - $999.00 Rs/- for Sponsorships Added to above...</a></li>
+  </ul>
+</body>
+</html>
