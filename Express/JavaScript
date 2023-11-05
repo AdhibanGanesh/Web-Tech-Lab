@@ -1,0 +1,16 @@
+const express = require('express'); const app = express();
+const port = 3000;
+app.get('/', (req, res) => {
+res.send('Welcome to our YouTube Membership Plan....!! <a href="/mem2">Click to Join</a>');
+});
+app.get('/mem2', (req, res) => {
+res.send('Available Plans to Buy :- <a href="/plans">Plans</a>'); });
+app.get('/plans', (req, res) => { const products = [
+{ id: 1, name: 'Plan 1', price: 29.0 }, { id: 2, name: 'Plan 2', price: 199.0 }, { id: 3, name: 'Plan 3', price: 999.0 },
+];
+res.json(products); });
+app.get('/buy/:id', (req, res) => {
+const productId = req.params.id; res.send(`Purchased Plan with ID ${productId}`);
+});
+app.listen(port, () => {
+console.log(`Membership server is running on port ${port}`); });
